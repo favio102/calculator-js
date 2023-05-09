@@ -5,6 +5,12 @@ const equalsButton = document.querySelector("[data-equals]");
 const deleteButton = document.querySelector("[data-delete]");
 const allClearButton = document.querySelector("[data-clear-all]");
 const operand = document.querySelector("[data-operand]");
+const buttons = document.querySelectorAll('button');
+
+window.addEventListener('keydown', function(e) {
+  const key = this.document.querySelector(`button[data-key='${e.keyCode}']`);
+  key.click();
+});
 
 function addNumber(e) {
     let button = e.target.innerText;
