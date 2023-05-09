@@ -1,23 +1,41 @@
-// *Operator functions
-function add(x, y){ return x + y; }
-function subtract(x, y){ return x - y; }
-function multiply(x, y){ return x * y; }
-function divide(x, y){ return x / y; }
+const numberButtons = document.querySelectorAll("[data-number]");
+const operationButtons = document.querySelectorAll("[data-operation]");
 
-function operate(op, x, y){
-    let result;
-    switch(op){
-        case 'add':
-            result = add(x ,y);
-            break;
-        case 'sub':
-            result = subtract(x ,y);
-            break;
-        case 'mul':
-            result = multiply(x ,y);
-            break;
-        case 'div':
-            result = divide(x, y);
-    }
-    return result;
+const equalsButton = document.querySelector("[data-equals]");
+const deleteButton = document.querySelector("[data-delete]");
+const allClearButton = document.querySelector("[data-clear-all]");
+const operand = document.querySelector("[data-operand]");
+
+function addNumber(e) {
+  let button = e.target.innerText;
+  if (operand.textContent.includes(".")) return;
+  operand.innerText += button;
 }
+
+function addOperation(e) {
+  let operation = e.target.innerText;
+  operand.innerText += operation;
+}
+
+numberButtons.forEach((button) => {
+  button.addEventListener("click", addNumber);
+});
+
+operationButtons.forEach((operation) => {
+  operation.addEventListener("click", addOperation);
+});
+
+allClearButton.addEventListener("click", () => {
+  operand.innerText = "";
+});
+
+deleteButton.addEventListener("click", () => {
+  operand.textContent = operand.textContent.slice(
+    0,
+    operand.textContent.length - 1
+  );
+});
+
+equalsButton.addEventListener("click", () => {
+  operand.textContent = eval(operand.textContent);
+});
