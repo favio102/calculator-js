@@ -8,7 +8,7 @@ const operand = document.querySelector("[data-operand]");
 
 function addNumber(e) {
   let button = e.target.innerText;
-  if (operand.textContent.includes(".")) return;
+
   operand.innerText += button;
 }
 
