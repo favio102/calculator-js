@@ -1,113 +1,52 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
-  background-color: #151515;
+  padding: 0;
+  margin: 0;
+  background: radial-gradient(
+    circle at 10% 20%,
+    rgb(253, 239, 132) 0%,
+    rgb(247, 198, 169) 54.2%,
+    rgb(21, 186, 196) 100.3%
+  );
 }
 
-html {
-  text-align: center;
-  font-family: 'Courier New', Courier, monospace;
-}
-
-#calculator {
-  display: flex;
-  min-height: 95vh;
+.calculator-grid {
+  display: grid;
   justify-content: center;
   align-content: center;
-  align-items: center;
-  height: 100vh;
-  overflow: hidden;
-}
-
-#container {
-  background-color: rgb(51, 24, 104);
-  border: 10px solid rgb(44, 43, 46);
-  border-radius: 4px;
-  display: grid;
+  min-height: 100vh;
   grid-template-columns: repeat(4, 100px);
-  grid-template-rows: minmax(100px, auto) repeat(5, 80px);
-  gap: 4px;
+  grid-template-rows: minmax(120px, auto) repeat(5, 100px);
 }
 
-#display {
+.calculator-grid > button {
+  cursor: pointer;
+  font-size: 2rem;
+  border: 1px solid white;
+  background-color: rgba(255, 255, 255, 0.75);
+  outline: none;
+}
+
+.calculator-grid > button:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.span-two {
+  grid-column: 2 span;
+}
+
+.output {
   grid-column: 1 / -1;
-  background-color: #211d2a;
+  background-color: rgba(0, 0, 0, 0.75);
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: flex-end;
-  padding: 5px;
-  font-size: 5.5em;
-  font-weight: initial;
-  text-shadow: 1.3px 1.3px #cbc5c5;
-  margin: 5px;
-}
-
-button {
-  margin: 1px;
-  border-radius: 40%;
-  border: none;
-  font-weight: initial;
-  font-size: 2em;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  color: rgb(203, 196, 196);
-}
-
-
-#zero {
-  grid-column: span 2;
-}
-
-.operator {
-  background-color: #1d1040b8;
-}
-
-.operator:focus {
-  background-color: #ffc183;
-}
-
-.equals {
-  background-color: #1422a2;
-}
-
-.equals:active {
-  background-color: #ffc183;
-}
-
-.operand {
-  background-color: #411cbbbc;
-}
-
-.operand:active {
-  background-color: #33b9bb;
-}
-
-.decimal {
-  background-color: #180c2e;
-}
-
-.decimal:active {
-  background-color: #33b9bb;
-}
-
-.clear {
-  background-color: rgb(14, 61, 107);
-}
-
-.clear:active {
-  background-color: rgb(123, 189, 255);
-}
-
-.sign {
-  background-color: rgb(14, 61, 107);
-}
-
-.sign:active {
-  background-color: rgb(123, 189, 255);
-}
-
-.percent {
-  background-color: rgb(14, 61, 107);
-}
-
-.percent:active {
-  background-color: rgb(123, 189, 255);
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 2.5rem;
 }
