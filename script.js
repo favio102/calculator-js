@@ -36,14 +36,13 @@ let displayBuffer = '';
 let overflow = false;
 let blinkID = null;
 let blinkOn = false;
-const ZERO_ERR_MSG = 'Oh No!';
+const ZERO_ERR_MSG = 'INFINITY';
 
 // *DOM Nodes
 const buttonListNum = document.querySelectorAll('button.num');
 const buttonListOp = document.querySelectorAll('button.op');
 const clearButton = document.querySelector('button#clear');
 const equalsButton = document.querySelector('button#equals');
-const delButton = document.querySelector('button#del');
 const mainDisplay = document.querySelector('.display h1');
 const secondaryDisplay = document.querySelector('.display h2');
 
@@ -86,9 +85,9 @@ function checkOpChange(buttonValue){
 
 function updateDisplay(buttonValue){
     displayValue += buttonValue;
-    if(displayValue.length > 8){
-        displayValue = displayValue.slice(0, 8);
-    }
+    // if(displayValue.length > 8){
+    //     displayValue = displayValue.slice(0, 8);
+    // }
     mainDisplay.textContent = displayValue;
 }
 

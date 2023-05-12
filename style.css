@@ -39,30 +39,30 @@ body {
 .span-two {
   grid-column: 2 span;
 }
+.span-three{
+  grid-column: 3 span;
+}
 
-.output {
+.display{
   grid-column: 1 / -1;
   background-color: rgba(0, 0, 0, 0.75);
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-direction: column;
   padding: 10px;
-  color: rgba(255, 255, 255, 0.75);
+  word-wrap: break-word;
+  word-break: break-all;
+  color: aqua;
+  }
+  
+  .display .h1{
+  color: white;
+  font-size: 1.5rem;
+  }
+  
+  .display .current-operand{
+  color: white;
   font-size: 2.5rem;
-}
-
-.output h1, .output h2 {
-    margin: auto;
-    padding: 20px 20px;
-    width: 80%;
-    height: 50px;
-    color: #fff;
-    font-size: 50px;
-}
-
-.output h2 {
-    text-align: right;
-    color: rgb(255, 255, 255);
-    font-size: 25px;
-}
+  }
 
