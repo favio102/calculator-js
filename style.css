@@ -50,3 +50,19 @@ body {
   color: rgba(255, 255, 255, 0.75);
   font-size: 2.5rem;
 }
+
+.output h1, .output h2 {
+    margin: auto;
+    padding: 20px 20px;
+    width: 80%;
+    height: 50px;
+    color: #fff;
+    font-size: 50px;
+}
+
+.output h2 {
+    text-align: right;
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+}
+
